@@ -9,13 +9,15 @@
         <div th:class="pre-header">
             <div th:class="pre-header-container">
                 <div th:if="${#httpServletRequest.userPrincipal != null}">
-                    Hallo!
+                    <span>Hallo!</span>
                 </div>
                 <div  id="welcome" th:if="${#httpServletRequest.userPrincipal == null}">
-                    Hallo!
-                    <a href="#">Login</a>
-                    <a href="#">Registrierung</a>
+                    <span>Hallo!</span>
+                    <a th:href="@{/login}">Login</a>
+                    <span>oder</span>
+                    <a th:href="@{/registration}">Registrierung</a>
                 </div>
+                <div th:class="clear"></div>
             </div>
         </div>
     </div>
