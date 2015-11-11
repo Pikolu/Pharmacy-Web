@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" >
+<head>
+</head>
+<body>
+<div th:fragment="header" th:class="row-1bg">
+    <div th:class="row-1">
+        <div th:class="pre-header">
+            <div th:class="pre-header-container">
+                <div th:if="${#httpServletRequest.userPrincipal != null}">
+                    <span>Hallo!</span>
+                </div>
+                <div  id="welcome" th:if="${#httpServletRequest.userPrincipal == null}">
+                    <span>Hallo!</span>
+                    <a th:href="@{/login}">Login</a>
+                    <span>oder</span>
+                    <a th:href="@{/registration}">Registrierung</a>
+                </div>
+                <div th:class="clear"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
