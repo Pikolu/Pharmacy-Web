@@ -3,12 +3,12 @@
       xmlns:th="http://www.thymeleaf.org"
       th:include="layout/template :: page">
 <head>
-    <title>Medikamente Preisvergleich - Medikamente günstig für alle | medizin-finder.de</title>
+    <title></title>
 </head>
 <body>
     <div th:fragment="content">
         <div th:class="main-container">
-            <h1>Medizin-finder.de Allgemeine Geschäftsbedingungen</h1>
+            <h1>Suche <span th:text="${parameter}"></span></h1>
         </div>
     </div>
 </body>

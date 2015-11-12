@@ -27,6 +27,7 @@ body {
     line-height: 18px;
     margin: 0;
     padding: 0;
+    border-color: #FFFFFF;
 }
 .mt {
     margin-top: 5px;
@@ -625,14 +626,8 @@ h2 {
     margin: 40px 2px 0 40px;
 }
 .search-bg {
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
     background: none repeat scroll 0 0 #FCFCFC;
-    border-color: #FFFFFF #FFFFFF #FFFFFF -moz-use-text-color;
     border-image: none;
-    border-style: solid solid solid none;
     border-width: 1px 1px 1px medium;
     display: inline-block;
 }
@@ -666,7 +661,7 @@ h2 {
     line-height: 18px;
     margin: 0;
     outline: medium none;
-    padding: 13px 10px;
+    padding: 16px 10px;
     width: 300px;
 }
 .box.cat-colum {
@@ -4116,4 +4111,8 @@ hr {
 
 .impressum {
     padding-left: 10px;
+}
+
+.logo {
+    margin-top: 37px;
 }
