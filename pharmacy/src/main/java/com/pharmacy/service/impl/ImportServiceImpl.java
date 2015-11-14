@@ -35,6 +35,10 @@ public class ImportServiceImpl implements ImportService {
     @Inject
     private ArticleSearchRepository articleSearchRepository;
 
+    /**
+     * This method imports the articles from CSV file and save this into database.
+     * The articles ware added to the a pharmacy.
+     */
     @Override
     public void importCSVFile() {
         InputStream inputStream = null;
@@ -63,6 +67,13 @@ public class ImportServiceImpl implements ImportService {
         }
     }
 
+    /**
+     * This method return a article from a line of CSV file.
+     * @param attr is the line of csv file
+     * @param pharmacy for assigned the the article.
+     * @return article for save
+     * @throws ServiceException
+     */
     private Article getArticle(List<String> attr, Pharmacy pharmacy) throws ServiceException {
         String articleNumber = attr.get(0);
         Article article;

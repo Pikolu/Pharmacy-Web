@@ -2,42 +2,169 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03528f0b-7476-4a06-a5a3-8467a7eec50f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pharmacy/domain/AbstractAuditingEntity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pharmacy/domain/Article.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pharmacy/repository/ArticleRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pharmacy/repository/search/ArticleSearchRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pharmacy/domain/Authority.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pharmacy/domain/Evaluation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pharmacy/domain/util/FixedH2Dialect.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pharmacy/domain/util/FixedPostgreSQL82Dialect.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pharmacy/service/api/ImportService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pharmacy/service/impl/ImportServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pharmacy/domain/util/JSR310DateConverters.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pharmacy/domain/util/JSR310DateTimeSerializer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pharmacy/domain/util/JSR310LocalDateDeserializer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pharmacy/domain/util/JSR310PersistenceConverters.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_dropwizard_metrics_metrics_ehcache_3_1_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ehcache_ehcache_2_8_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_ehcache_4_3_11_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_envers_4_3_11_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_2_spec_1_0_0_Final.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pharmacy/domain/Payment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pharmacy/domain/PersistentAuditEvent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pharmacy/domain/PersistentToken.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pharmacy/domain/Pharmacy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pharmacy/repository/PharmacyRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pharmacy/repository/search/PharmacySearchRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pharmacy/domain/User.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/ehcache.xml" />
-      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\_state\global-15" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\_state\global-8" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\0\_state\state-6" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\0\index\_c8.cfe" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\0\index\_c8.cfs" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\0\index\_c8.si" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\0\index\_c9.cfe" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\0\index\_c9.cfs" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\0\index\_c9.si" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\0\index\_ca.fdt" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\0\index\_ca.fdx" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\0\index\_ca.fnm" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\0\index\_ca.nvd" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\0\index\_ca.nvm" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\0\index\_ca.si" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\0\index\_ca_Lucene49_0.dvd" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\0\index\_ca_Lucene49_0.dvm" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\0\index\_ca_es090_0.blm" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\0\index\_ca_es090_0.doc" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\0\index\_ca_es090_0.pos" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\0\index\_ca_es090_0.tim" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\0\index\_ca_es090_0.tip" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\0\index\segments.gen" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\0\index\segments_1" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\0\index\write.lock" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\0\translog\translog-1447509098438" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\1\_state\state-6" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\1\index\_c8.cfe" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\1\index\_c8.cfs" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\1\index\_c8.si" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\1\index\_c9.cfe" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\1\index\_c9.cfs" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\1\index\_c9.si" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\1\index\_ca.cfe" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\1\index\_ca.cfs" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\1\index\_ca.si" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\1\index\_cb.fdt" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\1\index\_cb.fdx" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\1\index\_cb.fnm" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\1\index\_cb.nvd" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\1\index\_cb.nvm" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\1\index\_cb.si" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\1\index\_cb_Lucene49_0.dvd" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\1\index\_cb_Lucene49_0.dvm" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\1\index\_cb_es090_0.blm" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\1\index\_cb_es090_0.doc" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\1\index\_cb_es090_0.pos" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\1\index\_cb_es090_0.tim" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\1\index\_cb_es090_0.tip" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\1\index\segments.gen" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\1\index\segments_1" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\1\index\write.lock" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\1\translog\translog-1447509098457" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\2\_state\state-6" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\2\index\_c8.cfe" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\2\index\_c8.cfs" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\2\index\_c8.si" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\2\index\_c9.cfe" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\2\index\_c9.cfs" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\2\index\_c9.si" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\2\index\_ca.cfe" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\2\index\_ca.cfs" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\2\index\_ca.si" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\2\index\_cb.fdt" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\2\index\_cb.fdx" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\2\index\_cb.fnm" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\2\index\_cb.nvd" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\2\index\_cb.nvm" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\2\index\_cb.si" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\2\index\_cb_Lucene49_0.dvd" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\2\index\_cb_Lucene49_0.dvm" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\2\index\_cb_es090_0.blm" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\2\index\_cb_es090_0.doc" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\2\index\_cb_es090_0.pos" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\2\index\_cb_es090_0.tim" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\2\index\_cb_es090_0.tip" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\2\index\segments.gen" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\2\index\segments_1" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\2\index\write.lock" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\2\translog\translog-1447509098447" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\3\_state\state-6" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\3\index\_c8.cfe" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\3\index\_c8.cfs" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\3\index\_c8.si" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\3\index\_c9.cfe" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\3\index\_c9.cfs" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\3\index\_c9.si" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\3\index\_ca.cfe" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\3\index\_ca.cfs" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\3\index\_ca.si" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\3\index\_cb.fdt" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\3\index\_cb.fdx" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\3\index\_cb.fnm" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\3\index\_cb.nvd" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\3\index\_cb.nvm" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\3\index\_cb.si" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\3\index\_cb_Lucene49_0.dvd" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\3\index\_cb_Lucene49_0.dvm" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\3\index\_cb_es090_0.blm" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\3\index\_cb_es090_0.doc" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\3\index\_cb_es090_0.pos" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\3\index\_cb_es090_0.tim" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\3\index\_cb_es090_0.tip" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\3\index\segments.gen" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\3\index\segments_1" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\3\index\write.lock" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\3\translog\translog-1447509098649" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\4\_state\state-6" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\4\index\_c8.cfe" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\4\index\_c8.cfs" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\4\index\_c8.si" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\4\index\_c9.cfe" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\4\index\_c9.cfs" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\4\index\_c9.si" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\4\index\_ca.cfe" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\4\index\_ca.cfs" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\4\index\_ca.si" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\4\index\_cb.fdt" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\4\index\_cb.fdx" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\4\index\_cb.fnm" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\4\index\_cb.nvd" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\4\index\_cb.nvm" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\4\index\_cb.si" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\4\index\_cb_Lucene49_0.dvd" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\4\index\_cb_Lucene49_0.dvm" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\4\index\_cb_es090_0.blm" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\4\index\_cb_es090_0.doc" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\4\index\_cb_es090_0.pos" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\4\index\_cb_es090_0.tim" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\4\index\_cb_es090_0.tip" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\4\index\segments.gen" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\4\index\segments_1" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\4\index\write.lock" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\4\translog\translog-1447509098609" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\article\_state\state-4" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\pharmacy\0\_state\state-16" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\pharmacy\0\index\segments.gen" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\pharmacy\0\index\segments_1" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\pharmacy\0\index\write.lock" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\pharmacy\0\translog\translog-1447507434962" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\pharmacy\1\_state\state-16" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\pharmacy\1\index\segments.gen" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\pharmacy\1\index\segments_1" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\pharmacy\1\index\write.lock" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\pharmacy\1\translog\translog-1447507434962" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\pharmacy\2\_state\state-16" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\pharmacy\2\index\segments.gen" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\pharmacy\2\index\segments_1" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\pharmacy\2\index\write.lock" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\pharmacy\2\translog\translog-1447507434962" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\pharmacy\3\_state\state-16" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\pharmacy\3\index\segments.gen" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\pharmacy\3\index\segments_1" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\pharmacy\3\index\write.lock" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\pharmacy\3\translog\translog-1447507434962" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\pharmacy\4\_state\state-16" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\pharmacy\4\index\segments.gen" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\pharmacy\4\index\segments_1" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\pharmacy\4\index\write.lock" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\pharmacy\4\translog\translog-1447507435059" afterPath="" />
+      <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\indices\pharmacy\_state\state-2" afterPath="" />
       <change type="DELETED" beforePath="D:\Workspace\Pharmacy-Web\pharmacy\data\elasticsearch\nodes\0\node.lock" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pharmacy/web/IndexController.java" afterPath="$PROJECT_DIR$/src/main/java/com/pharmacy/web/IndexController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pharmacy/service/impl/ImportServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/pharmacy/service/impl/ImportServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pharmacy-web.iml" afterPath="$PROJECT_DIR$/pharmacy-web.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pharmacy-web.iws" />
@@ -120,11 +247,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImportServiceImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ImportServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pharmacy/service/impl/ImportServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29310346">
-              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -166,11 +293,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.0587189">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application-dev.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application-dev.yml">
+          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="58" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="58" />
+              <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -229,7 +366,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/css/default.css" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/pharmacy/domain/util/JSR310DateTimeSerializer.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/pharmacy/service/ImportService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pharmacy/repository/api/PharmacyRepository.java" />
@@ -243,6 +379,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/pharmacy/repository/search/ArticleSearchRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pharmacy/repository/ArticleRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pharmacy/service/impl/ImportServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
       </list>
     </option>
   </component>
@@ -388,316 +525,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pharmacy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="impl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="security" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="search" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pharmacy" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1057,9 +884,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="Unknown" factoryName="Unknown">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -1121,12 +945,12 @@
       <workItem from="1447267690118" duration="15869000" />
       <workItem from="1447437578664" duration="3730000" />
       <workItem from="1447492922591" duration="4377000" />
-      <workItem from="1447498063906" duration="8697000" />
+      <workItem from="1447498063906" duration="9656000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39316000" />
+    <option name="totallyTimeSpent" value="40275000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1139,27 +963,27 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24093817" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24093817" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.4978678" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3429844" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3429844" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22228146" sideWeight="0.4928717" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22228146" sideWeight="0.4928717" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32995737" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14872068" sideWeight="0.5071283" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32293987" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32293987" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1184,7 +1008,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/pharmacy/service/impl/ImportServiceImpl.java</url>
-          <line>40</line>
+          <line>44</line>
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
@@ -1518,24 +1342,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application-dev.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
-          <folding>
-            <marker date="1447506885402" expanded="true" signature="-1:-1" placeholder="liquibase:" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pharmacy/config/DatabaseConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1626,14 +1432,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="58" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pharmacy/service/api/ImportService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1670,11 +1468,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pharmacy/service/impl/ImportServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29310346">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.77700347">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application-dev.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0587189">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
