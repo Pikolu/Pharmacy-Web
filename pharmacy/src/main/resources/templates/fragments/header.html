@@ -32,7 +32,7 @@
                         <div th:id="search">
                             <div th:class="button-search"></div>
                         <span th:class="search-bg">
-                            <input th:class="input" th:id="globar_search_input" th:type="text" th:name="parameter" th:value="${parameter != null} ? parameter : ''" />
+                            <input th:class="input" th:id="globar_search_input" th:type="text" th:name="parameter" th:value="${parameter != null} ? ${parameter} : ''" />
                         </span>
                         </div>
                     </form>

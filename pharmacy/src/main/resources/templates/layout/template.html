@@ -29,7 +29,9 @@
 </head>
 <body>
 <div th:replace="fragments/header :: header"></div>
-<div th:include="this :: content"/>
-layout footer
+<div th:class="main-container">
+    <div th:include="this :: content"/>
+    <div th:replace="fragments/footer :: footer"></div>
+</div>
 </body>
 </html>
