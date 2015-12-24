@@ -135,5 +135,7 @@
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-ehcache:4.3.11.Final" level="project" />
     <orderEntry type="library" name="Maven: io.dropwizard.metrics:metrics-ehcache:3.1.2" level="project" />
     <orderEntry type="library" name="Maven: net.sf.ehcache:ehcache:2.8.3" level="project" />
+    <orderEntry type="library" name="Maven: org.liquibase:liquibase-core:3.4.1" level="project" />
+    <orderEntry type="library" name="Maven: com.mattbertolini:liquibase-slf4j:1.2.1" level="project" />
   </component>
 </module>

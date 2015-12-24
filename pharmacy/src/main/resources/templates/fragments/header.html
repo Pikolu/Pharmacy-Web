@@ -35,6 +35,27 @@
                             <input th:class="input" th:id="globar_search_input" th:type="text" th:name="parameter" th:value="${parameter != null} ? ${parameter} : ''" />
                         </span>
                         </div>
+                        <script th:inline="javascript">
+                            /*<![CDATA[*/
+                            var context = [[@{/suche}]];
+                            console.log(context);
+                            /*]]>*/
+                            jQuery(document).ready(function () {
+                                jQuery('#globar_search_input').autocomplete({
+                                    serviceUrl: context,
+                                    paramName: "parameter",
+                                    delimiter: ",",
+                                    transformResult: function (response) {
+                                        return {
+                                            suggestions: $.map($.parseJSON(response), function (item) {
+
+                                                return {value: item.name, data: item.id};
+                                            })
+                                        };
+                                    }
+                                });
+                            });
+                        </script>
                     </form>
 
                     <div th:id="cart">

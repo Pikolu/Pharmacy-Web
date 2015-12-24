@@ -42,7 +42,7 @@ public class ImportServiceImpl implements ImportService {
     @Override
     public void importCSVFile() {
         InputStream inputStream = null;
-        Long PHARMACY_ID = 1005L;
+        Long PHARMACY_ID = 1004L;
         Pharmacy pharmacy = pharmacyRepository.findOne(PHARMACY_ID);
         try {
             inputStream = new FileInputStream("C:\\Users\\Alexander\\Dropbox\\Mappe1.csv");
