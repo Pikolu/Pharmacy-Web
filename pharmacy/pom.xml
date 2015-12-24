@@ -23,6 +23,10 @@
 		<java.version>1.8</java.version>
 		<metrics-spring.version>3.1.2</metrics-spring.version>
 		<jackson.version>2.6.1</jackson.version>
+		<dropwizard-metrics.version>3.1.2</dropwizard-metrics.version>
+		<liquibase.version>3.4.1</liquibase.version>
+		<liquibase-slf4j.version>1.2.1</liquibase-slf4j.version>
+		<liquibase-hibernate4.version>3.5</liquibase-hibernate4.version>
 	</properties>
 
 	<dependencies>
@@ -119,6 +123,40 @@
 			<artifactId>jackson-datatype-json-org</artifactId>
 			<version>${jackson.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-envers</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-ehcache</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>ehcache-core</artifactId>
+					<groupId>net.sf.ehcache</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>io.dropwizard.metrics</groupId>
+			<artifactId>metrics-ehcache</artifactId>
+			<version>${dropwizard-metrics.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.liquibase</groupId>
+			<artifactId>liquibase-core</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>jetty-servlet</artifactId>
+					<groupId>org.eclipse.jetty</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.mattbertolini</groupId>
+			<artifactId>liquibase-slf4j</artifactId>
+			<version>${liquibase-slf4j.version}</version>
+		</dependency>
 	</dependencies>
 	
 	<build>
@@ -126,6 +164,40 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.liquibase</groupId>
+				<artifactId>liquibase-maven-plugin</artifactId>
+				<version>${liquibase.version}</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.javassist</groupId>
+						<artifactId>javassist</artifactId>
+						<version>3.18.2-GA</version>
+					</dependency>
+					<dependency>
+						<groupId>org.liquibase.ext</groupId>
+						<artifactId>liquibase-hibernate4</artifactId>
+						<version>${liquibase-hibernate4.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-starter-data-jpa</artifactId>
+						<version>${project.parent.version}</version>
+					</dependency>
+				</dependencies>
+				<configuration>
+					<changeLogFile>src/main/resources/config/liquibase/master.xml</changeLogFile>
+					<diffChangeLogFile>src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml</diffChangeLogFile>
+					<driver>org.postgresql.Driver</driver>
+					<url>jdbc:postgresql://localhost/adm</url>
+					<defaultSchemaName />
+					<username>postgres</username>
+					<password>Admin123#</password>
+					<referenceUrl>hibernate:spring:com.pharmacy.domain?dialect=org.hibernate.dialect.PostgreSQL82Dialect</referenceUrl>
+					<verbose>true</verbose>
+					<logging>debug</logging>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
