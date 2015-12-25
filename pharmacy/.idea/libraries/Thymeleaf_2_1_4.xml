@@ -1,6 +1,5 @@
 <component name="libraryTable">
-  <library name="Thymeleaf-2.1.4" type="thymeleaf">
-    <properties version="2.1.4" />
+  <library name="Thymeleaf-2.1.4">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/thymeleaf-2.1.4.RELEASE.jar!/" />
     </CLASSES>
