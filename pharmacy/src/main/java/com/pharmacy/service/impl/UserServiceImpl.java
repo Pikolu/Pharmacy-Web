@@ -167,7 +167,7 @@ public class UserServiceImpl implements UserService {
      * This is scheduled to get fired everyday, at midnight.
      * </p>
      */
-    @Scheduled(cron = "0 0 0 * * ?")
+//    @Scheduled(cron = "0 0 0 * * ?")
     public void removeOldPersistentTokens() {
         LocalDate now = LocalDate.now();
         persistentTokenRepository.findByTokenDateBefore(now.minusMonths(1)).stream().forEach(token -> {
@@ -185,7 +185,7 @@ public class UserServiceImpl implements UserService {
      * This is scheduled to get fired everyday, at 01:00 (am).
      * </p>
      */
-    @Scheduled(cron = "0 0 1 * * ?")
+//    @Scheduled(cron = "0 0 1 * * ?")
     public void removeNotActivatedUsers() {
         ZonedDateTime now = ZonedDateTime.now();
         List<User> users = userRepository.findAllByActivatedIsFalseAndCreatedDateBefore(now.minusDays(3));

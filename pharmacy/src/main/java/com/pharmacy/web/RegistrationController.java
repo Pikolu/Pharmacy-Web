@@ -49,12 +49,8 @@ public class RegistrationController {
                 modelAndView.getModel().putAll(result.getModel());
             } else {
                 modelAndView = new ModelAndView("redirect:welcome.html", "command", user);
-//                userService.createUserInformation()
                 authenticateUserAndSetSession(user, request);
             }
-//        } catch (ServiceException ex) {
-//            ex.writeLog(LOG);
-//        }
         LOG.trace("Exit registration: modelAndView={}", modelAndView);
         return modelAndView;
     }

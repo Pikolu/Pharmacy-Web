@@ -16,6 +16,8 @@ public final class Constants {
 
     public static final String SYSTEM_ACCOUNT = "system";
 
+    public static final String SECURITY_REMERBERME_KEY = "4d0d1e0cad915f2075e65279bbc20a952bfe11d7";
+
     private Constants() {
     }
 }
