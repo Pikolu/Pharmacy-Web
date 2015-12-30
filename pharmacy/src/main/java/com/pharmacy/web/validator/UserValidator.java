@@ -51,7 +51,6 @@ public class UserValidator implements Validator {
         User user = (User) target;
 
         validate(target, errors);
-//        Account account = user.getAccount();
 
         if (user.getEmail() == null || user.getEmail().isEmpty()) {
             errors.rejectValue("account.email", "message.EmptyEmail");
@@ -62,36 +61,10 @@ public class UserValidator implements Validator {
             Authentication auth = SecurityContextHolder.getContext().getAuthentication();
             User oldUser = (User) auth.getPrincipal();
             if (!oldUser.getEmail().equals(user.getEmail())) {
-                checkEmail(user, errors);
             }
         } else {
-            checkEmail(user, errors);
-//            if (!user.isAcceptedGeneralTerms()) {
-//                errors.rejectValue("acceptedGeneralTerms", "message.NoacceptedGeneralTerms");
-//            }
         }
 
-//        if (account.getPassword() == null || account.getPassword().isEmpty()) {
-//            errors.rejectValue("account.password", "message.EmptyPassword");
-//        } else if (!isPasswordValid(account.getPassword())) {
-////            errors.rejectValue("account.password", "message.NotmatchPassword");
-//        } else if (account.getPasswordConfirm() == null || account.getPasswordConfirm().isEmpty()) {
-//            errors.rejectValue("account.passwordConfirm", "message.EmptyPasswordRepeat");
-//        } else if (!(account.getPassword().equals(account.getPasswordConfirm()))) {
-//            errors.rejectValue("account.password", "message.NotmatchPassword");
-//        }
-
-    }
-
-    private void checkEmail(User user, Errors errors) {
-//        try {
-            User existAccout = userService.getUserWithAuthorities();
-            if (existAccout != null) {
-                errors.rejectValue("account.email", "message.DupplicateEmail");
-            }
-//        } catch (ServiceException ex) {
-//            ex.writeLog(LOG);
-//        }
     }
 
     private boolean isPasswordValid(String password) {

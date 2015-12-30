@@ -15,55 +15,14 @@
 
             <div class="box-container">
                 <p>
-                    <!--<s:message code="label.alreadyRegistration" />-->
-                    <!--<c:url value="/login.html" var="login"></c:url>-->
-                    <a href="${login}">
-                        <!--<s:message code="label.alreadyRegistrationLogin" />.-->
+                    <span>Sie haben sich schon angemeldet?</span>
+                    <a th:href="@{/login}">
+                        Einloggen
                     </a>
                 </p>
-                <!--<c:url value="/registration.html" var="registration"></c:url>-->
-                <form action="${registration}" method="post" id="register">
+                <form th:action="@{/registration}" method="post" id="register">
                     <h2>
-                        <!--<s:message code="label.yourPersonData" />-->
-                    </h2>
-                    <div class="content">
-                        <table class="form">
-                            <tbody><tr>
-                                <td>
-                                    <span class="required">*</span>
-                                    <!--<s:message code="label.firstname" />:-->
-                                </td>
-                                <td>
-                                    <input cssClass="q1" path="firstName"/>
-                                    <!--<form:errors path="firstName" cssClass="error" />-->
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="required">*</span>
-                                    <!--<s:message code="label.lastname" />:-->
-                                </td>
-                                <td>
-                                    <input cssClass="q1" path="lastName"/>
-                                    <!--<form:errors path="lastName" cssClass="error" />-->
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span class="required">*</span>
-                                    <!--<s:message code="label.email" />:-->
-                                </td>
-                                <td>
-                                    <input class="q1" name="account.email" value="" type="text">
-                                    <!--<form:errors path="account.email" cssClass="error" />-->
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <h2>
-                        <!--<s:message code="label.yourPassword" />-->
+                        Persönliche Daten:
                     </h2>
                     <div class="content">
                         <table class="form">
@@ -71,23 +30,56 @@
                             <tr>
                                 <td>
                                     <span class="required">*</span>
-                                    <!--<s:message code="label.password" />:-->
+                                    <span>Benutzername</span>
                                 </td>
                                 <td>
-                                    <input class="q1" name="account.password" value="" type="password">
-                                    <!--<errors path="account.password" cssClass="error" />-->
-
+                                    <input class="q1" name="login" type="text" />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <span class="required">*</span>
-                                    <!--<s:message code="label.passwordRepeat" />:-->
+                                    <span>Vorname</span>
                                 </td>
                                 <td>
-                                    <input class="q1" name="account.passwordConfirm" value="" type="password">
-                                    <!--<form:errors path="account.passwordConfirm" cssClass="error" />-->
+                                    <input class="q1" name="firstName" type="text" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="required">*</span>
+                                    <span>Nachname</span>
+                                </td>
+                                <td>
+                                    <input class="q1" name="lastName" type="text" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="required">*</span>
+                                    <span>E-mail</span>
+                                </td>
+                                <td>
+                                    <input class="q1" name="email" value="" type="text" />
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
+                    <h2>
+                        Passwort:
+                    </h2>
+                    <div class="content">
+                        <table class="form">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <span class="required">*</span>
+                                    <span>Passwort</span>
+                                </td>
+                                <td>
+                                    <input class="q1" name="password" value="" type="password" />
                                 </td>
                             </tr>
                             </tbody>
@@ -95,19 +87,16 @@
                     </div>
                     <div class="buttons">
                         <div class="right">
-                            <!--<s:message code="label.acceptGeneralTerms" />-->
-                            <!--<c:url value="/help/policies/user-agreement.html" var="agreement"></c:url>-->
-                            <!--/help/policies/user-agreement-->
+                            <span>Mit meiner Anmeldung akzeptiere ich die</span>
                             <a class="colorbox cboxElement" href="${agreement}" alt="General Terms">
                                 <b>
-                                    <!--<s:message code="label.MFGeneralTerms" />-->
+                                    medizin-finder.de AGB
                                 </b>
                             </a>
-                            <input name="acceptedGeneralTerms" value="1" type="checkbox">
-                            <!--<form:errors path="acceptedGeneralTerms" cssClass="error" />-->
+                            <input name="acceptedGeneralTerms" value="1" type="checkbox" />
                             <a onclick="$('#register').submit();" class="button">
                                 <span>
-                                    <!--<s:message code="label.next" />-->
+                                    <span>Weiter</span>
                                 </span>
                             </a>
                         </div>

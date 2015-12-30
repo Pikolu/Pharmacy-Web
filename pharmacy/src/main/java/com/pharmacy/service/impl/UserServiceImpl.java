@@ -10,7 +10,6 @@ import com.pharmacy.service.api.UserService;
 import com.pharmacy.service.util.RandomUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,7 +29,7 @@ import java.util.Set;
 @Transactional
 public class UserServiceImpl implements UserService {
 
-    private final Logger log = LoggerFactory.getLogger(UserService.class);
+    private final Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
 
     @Inject
     private PasswordEncoder passwordEncoder;
@@ -92,7 +91,6 @@ public class UserServiceImpl implements UserService {
 
     public User createUserInformation(String login, String password, String firstName, String lastName, String email,
                                       String langKey) {
-
         User newUser = new User();
         Authority authority = authorityRepository.findOne("ROLE_USER");
         Set<Authority> authorities = new HashSet<>();
@@ -167,7 +165,7 @@ public class UserServiceImpl implements UserService {
      * This is scheduled to get fired everyday, at midnight.
      * </p>
      */
-    @Scheduled(cron = "0 0 0 * * ?")
+//    @Scheduled(cron = "0 0 0 * * ?")
     public void removeOldPersistentTokens() {
         LocalDate now = LocalDate.now();
         persistentTokenRepository.findByTokenDateBefore(now.minusMonths(1)).stream().forEach(token -> {
@@ -185,7 +183,7 @@ public class UserServiceImpl implements UserService {
      * This is scheduled to get fired everyday, at 01:00 (am).
      * </p>
      */
-    @Scheduled(cron = "0 0 1 * * ?")
+//    @Scheduled(cron = "0 0 1 * * ?")
     public void removeNotActivatedUsers() {
         ZonedDateTime now = ZonedDateTime.now();
         List<User> users = userRepository.findAllByActivatedIsFalseAndCreatedDateBefore(now.minusDays(3));

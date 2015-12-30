@@ -1,5 +1,6 @@
 package com.pharmacy.security;
 
+import com.pharmacy.config.Constants;
 import com.pharmacy.domain.PersistentToken;
 import com.pharmacy.repository.PersistentTokenRepository;
 import com.pharmacy.repository.UserRepository;
@@ -57,7 +58,7 @@ public class CustomPersistentRememberMeServices extends AbstractRememberMeServic
         public CustomPersistentRememberMeServices(Environment env, org.springframework.security.core.userdetails
                 .UserDetailsService userDetailsService) {
 
-        super(env.getProperty("security.rememberme.key"), userDetailsService);
+        super(Constants.SECURITY_REMERBERME_KEY, userDetailsService);
         random = new SecureRandom();
     }
 

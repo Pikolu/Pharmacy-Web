@@ -14,8 +14,8 @@ import org.springframework.security.config.annotation.web.servlet.configuration.
  * <p>
  * aasdasd
  */
-@Configuration
-@EnableWebMvcSecurity
+//@Configuration
+//@EnableWebMvcSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
