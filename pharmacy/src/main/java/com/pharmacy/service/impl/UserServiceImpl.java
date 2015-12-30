@@ -10,7 +10,6 @@ import com.pharmacy.service.api.UserService;
 import com.pharmacy.service.util.RandomUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -92,7 +91,6 @@ public class UserServiceImpl implements UserService {
 
     public User createUserInformation(String login, String password, String firstName, String lastName, String email,
                                       String langKey) {
-
         User newUser = new User();
         Authority authority = authorityRepository.findOne("ROLE_USER");
         Set<Authority> authorities = new HashSet<>();

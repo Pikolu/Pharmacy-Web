@@ -92,7 +92,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .key(Constants.SECURITY_REMERBERME_KEY)
                 .and()
                 .formLogin()
-                .loginProcessingUrl("/api/authentication")
+                .loginProcessingUrl("/login")
                 .successHandler(ajaxAuthenticationSuccessHandler)
                 .failureHandler(ajaxAuthenticationFailureHandler)
                 .usernameParameter("j_username")
