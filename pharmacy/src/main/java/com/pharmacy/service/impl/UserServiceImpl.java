@@ -30,7 +30,7 @@ import java.util.Set;
 @Transactional
 public class UserServiceImpl implements UserService {
 
-    private final Logger log = LoggerFactory.getLogger(UserService.class);
+    private final Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
 
     @Inject
     private PasswordEncoder passwordEncoder;
