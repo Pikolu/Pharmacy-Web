@@ -22,9 +22,6 @@ public class LoginController {
 
     private static final Logger LOG = LoggerFactory.getLogger(LoginController.class);
 
-    @Inject
-    private UserDetailsService userDetailsService;
-
     @RequestMapping(value = "/login")
     public ModelAndView initLoginPage(@RequestParam(value = "error", required = false) String error,
                                       @RequestParam(value = "logout", required = false) String logout, HttpServletRequest request) {
