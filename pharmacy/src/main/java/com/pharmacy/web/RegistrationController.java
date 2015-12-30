@@ -40,7 +40,6 @@ public class RegistrationController {
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public ModelAndView registration(@ModelAttribute("command") User user, BindingResult result, HttpServletRequest request, HttpServletResponse response) {
         LOG.trace("Enter registration: user={}, result={}", user, result);
-//        try {
             validator.validate(user, result, false);
             if (result.hasErrors()) {
                 if (modelAndView == null) {
@@ -49,12 +48,9 @@ public class RegistrationController {
                 modelAndView.getModel().putAll(result.getModel());
             } else {
                 modelAndView = new ModelAndView("redirect:welcome.html", "command", user);
-//                userService.createUserInformation()
+                userService.createUserInformation(user.getLogin(), user.getPassword(), user.getFirstName(), user.getLastName(), user.getEmail(), "de_DE");
                 authenticateUserAndSetSession(user, request);
             }
-//        } catch (ServiceException ex) {
-//            ex.writeLog(LOG);
-//        }
         LOG.trace("Exit registration: modelAndView={}", modelAndView);
         return modelAndView;
     }
