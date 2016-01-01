@@ -74,7 +74,7 @@ public class RegistrationController {
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
     public ModelAndView initRegistrition() {
         LOG.trace("Enter showContacts");
-        modelAndView = new ModelAndView(REGISTRATION, "command", new User());
+        modelAndView = new ModelAndView(REGISTRATION, "command", new User(""));
         LOG.trace("Exit initRegistrition: modelAndView={}", modelAndView);
         return modelAndView;
     }

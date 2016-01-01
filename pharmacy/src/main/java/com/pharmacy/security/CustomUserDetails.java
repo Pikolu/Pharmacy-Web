@@ -20,6 +20,8 @@ public class CustomUserDetails implements UserDetails {
     private final Long id;
     private final String password;
     private final String username;
+    private final String firstName;
+    private final String lastName;
     private final Set<GrantedAuthority> authorities;
     private final boolean accountNonExpired;
     private final boolean accountNonLocked;
@@ -36,9 +38,11 @@ public class CustomUserDetails implements UserDetails {
      * @param credentialsNonExpired
      * @param enabled
      */
-    public CustomUserDetails(Long id, String username, String password, Set<GrantedAuthority> authorities, boolean accountNonExpired, boolean accountNonLocked,
+    public CustomUserDetails(Long id, String username, String firstName, String lastName, String password, Set<GrantedAuthority> authorities, boolean accountNonExpired, boolean accountNonLocked,
                              boolean credentialsNonExpired, boolean enabled) {
         this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.username = username;
         this.password = password;
         this.authorities = authorities;
@@ -65,6 +69,14 @@ public class CustomUserDetails implements UserDetails {
     @Override
     public String getUsername() {
         return username;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getFirstName() {
+        return firstName;
     }
 
     @Override
