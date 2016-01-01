@@ -8,8 +8,13 @@
         <div th:class="row-1">
             <div th:class="pre-header">
                 <div th:class="pre-header-container">
-                    <div th:if="${#httpServletRequest.userPrincipal != null}">
+                    <div th:id="welcome" th:if="${#httpServletRequest.userPrincipal != null}">
                         <span>Hallo!</span>
+                        <a th:href="@{/account}">
+                            <span style="color: white" th:text="${customUser.firstName}">fistName</span>
+                            ,
+                            <span style="color: white" th:text="${customUser.lastName}">fistName</span>
+                        </a>
                     </div>
                     <div th:id="welcome" th:if="${#httpServletRequest.userPrincipal == null}">
                         <span>Hallo!</span>
