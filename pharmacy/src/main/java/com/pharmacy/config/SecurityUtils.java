@@ -1,12 +1,15 @@
 package com.pharmacy.config;
 
 import com.pharmacy.security.CustomUserDetails;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.util.Collection;
 
@@ -14,6 +17,8 @@ import java.util.Collection;
  * Utility class for Spring Security.
  */
 public final class SecurityUtils {
+
+    private static final Logger LOG = LoggerFactory.getLogger(SecurityUtils.class);
 
     private SecurityUtils() {
     }
@@ -64,8 +69,7 @@ public final class SecurityUtils {
     }
 
     /**
-     * Return the current user, or throws an exception, if the user is not
-     * authenticated yet.
+     * Return the current user.
      * 
      * @return the current user
      */
@@ -74,10 +78,14 @@ public final class SecurityUtils {
         Authentication authentication = securityContext.getAuthentication();
         if (authentication != null) {
             if (authentication.getPrincipal() instanceof CustomUserDetails) {
+                CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
+                LOG.info("User is authenticated => {}", userDetails);
                 return (CustomUserDetails) authentication.getPrincipal();
+            } else {
+                LOG.info("User is not authenticated => {}", authentication);
             }
         }
-        throw new IllegalStateException("User not found!");
+        return null;
     }
 
     /**
