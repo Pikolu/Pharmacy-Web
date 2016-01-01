@@ -20,7 +20,7 @@
                         Einloggen
                     </a>
                 </p>
-                <form th:action="@{/registration}" method="post" id="register">
+                <form th:action="@{/registration}" method="post" id="register" th:object="${command}">
                     <h2>
                         Persönliche Daten:
                     </h2>
@@ -33,7 +33,8 @@
                                     <span>Benutzername</span>
                                 </td>
                                 <td>
-                                    <input class="q1" name="login" type="text" />
+                                    <input class="q1" name="login" type="text" th:field="*{login}"/>
+                                    <span th:if="${#fields.hasErrors('login')}">Name Error</span>
                                 </td>
                             </tr>
                             <tr>
