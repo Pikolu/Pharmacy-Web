@@ -23,7 +23,7 @@ import javax.inject.Inject;
  * Created by Alexander on 09.11.2015.
  */
 @Controller
-public class IndexController {
+public class IndexController extends AbstractController {
 
     private static final Logger LOG = LoggerFactory.getLogger(IndexController.class);
 
@@ -41,10 +41,4 @@ public class IndexController {
         Assert.notNull (model);
         importService.importCSVFile();
     }
-
-    @ModelAttribute("customUser")
-    public CustomUserDetails getCustomUserDetails() {
-        return SecurityUtils.getCurrentUser();
-    }
-
 }

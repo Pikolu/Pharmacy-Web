@@ -13,5 +13,5 @@ public interface ArticleService {
 
     Page<Article> findArticlesByBestPrice(Pageable pageable);
 
-    List<Article> findArticlesByParameter(String parameter);
+    Page<Article> findArticlesByParameter(String parameter, Pageable pageable);
 }

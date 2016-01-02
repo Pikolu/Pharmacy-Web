@@ -34,7 +34,7 @@
                                 </td>
                                 <td>
                                     <input class="q1" name="login" type="text" th:field="*{login}"/>
-                                    <span th:if="${#fields.hasErrors('login')}">Name Error</span>
+                                    <span th:if="${#fields.hasErrors('login')}" class="error">Bitte geben Sie Ihren Benutzername ein.</span>
                                 </td>
                             </tr>
                             <tr>
@@ -43,7 +43,8 @@
                                     <span>Vorname</span>
                                 </td>
                                 <td>
-                                    <input class="q1" name="firstName" type="text" />
+                                    <input class="q1" name="firstName" type="text" th:field="*{firstName}"/>
+                                    <span th:if="${#fields.hasErrors('firstName')}" class="error">Bitte geben Sie Ihren Vornamen ein.</span>
                                 </td>
                             </tr>
                             <tr>
@@ -52,7 +53,8 @@
                                     <span>Nachname</span>
                                 </td>
                                 <td>
-                                    <input class="q1" name="lastName" type="text" />
+                                    <input class="q1" name="lastName" type="text" th:field="*{lastName}" />
+                                    <span th:if="${#fields.hasErrors('lastName')}" class="error">Bitte geben Sie Ihren Nachnamen ein.</span>
                                 </td>
                             </tr>
                             <tr>
@@ -61,7 +63,8 @@
                                     <span>E-mail</span>
                                 </td>
                                 <td>
-                                    <input class="q1" name="email" value="" type="text" />
+                                    <input class="q1" name="email" value="" type="text" th:field="*{email}" />
+                                    <span th:if="${#fields.hasErrors('email')}" class="error">Bitte geben Sie Ihre E-Mail-Adresse ein.</span>
                                 </td>
                             </tr>
                             </tbody>
@@ -80,7 +83,8 @@
                                     <span>Passwort</span>
                                 </td>
                                 <td>
-                                    <input class="q1" name="password" value="" type="password" />
+                                    <input class="q1" name="password" value="" type="password" th:field="*{password}"/>
+                                    <span th:if="${#fields.hasErrors('password')}"  th:errors="*{password}" class="error">Bitte geben Sie Ihre E-Mail-Adresse ein.</span>
                                 </td>
                             </tr>
                             </tbody>

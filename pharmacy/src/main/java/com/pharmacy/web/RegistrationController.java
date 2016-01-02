@@ -34,13 +34,11 @@ public class RegistrationController {
     @Inject
     private UserService userService;
     private ModelAndView modelAndView;
-//    @Autowired
-//    private AuthenticationManager authenticationManager;
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public ModelAndView registration(@ModelAttribute("command") User user, BindingResult result, HttpServletRequest request, HttpServletResponse response) {
         LOG.trace("Enter registration: user={}, result={}", user, result);
-            validator.validate(user, result, false);
+            validator.validate(user, result);
             if (result.hasErrors()) {
                 if (modelAndView == null) {
                     modelAndView = new ModelAndView("redirect:registration.html", "command", new User());
