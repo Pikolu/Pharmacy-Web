@@ -44,6 +44,8 @@ public class Article implements Serializable {
     @Column(name = "key_words")
     private String keyWords;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "article_id")
     private List<Price> prices;
 
     public Long getId() {
