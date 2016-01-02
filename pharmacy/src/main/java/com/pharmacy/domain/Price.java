@@ -1,14 +1,19 @@
 package com.pharmacy.domain;
 
 import com.pharmacy.domain.Pharmacy;
+import org.hibernate.annotations.*;
 
+import javax.persistence.*;
 import javax.persistence.CascadeType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * Created by Alexander on 02.01.2016.
  */
+@Entity
+@Table(name = "price")
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Price {
 
     private float suggestedRetailPrice;
