@@ -7,13 +7,14 @@ import javax.persistence.*;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import org.hibernate.annotations.Cache;
 
 /**
  * Created by Alexander on 02.01.2016.
  */
 @Entity
 @Table(name = "price")
-@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Price {
 
     private float suggestedRetailPrice;
