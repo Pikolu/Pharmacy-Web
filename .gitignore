@@ -7,3 +7,8 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 pharmacy/.idea/workspace.xml
+pharmacy/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_2.xml
+pharmacy/.idea/libraries/Maven__commons_digester_commons_digester_2_1.xml
+pharmacy/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml
+pharmacy/.idea/libraries/Maven__commons_validator_commons_validator_1_4_0.xml
+pharmacy/pharmacy-web.iml

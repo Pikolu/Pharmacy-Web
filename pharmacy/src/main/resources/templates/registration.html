@@ -84,7 +84,7 @@
                                 </td>
                                 <td>
                                     <input class="q1" name="password" value="" type="password" th:field="*{password}"/>
-                                    <span th:if="${#fields.hasErrors('password')}" class="error">Bitte geben Sie Ihre E-Mail-Adresse ein.</span>
+                                    <span th:if="${#fields.hasErrors('password')}"  th:errors="*{password}" class="error">Bitte geben Sie Ihre E-Mail-Adresse ein.</span>
                                 </td>
                             </tr>
                             </tbody>

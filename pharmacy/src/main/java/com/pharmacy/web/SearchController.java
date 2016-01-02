@@ -21,7 +21,7 @@ import java.util.List;
  * Created by Alexander on 12.11.2015.
  */
 @Controller
-public class SearchController {
+public class SearchController extends AbstractController{
 
     private static final Logger LOG = LoggerFactory.getLogger(IndexController.class);
 
