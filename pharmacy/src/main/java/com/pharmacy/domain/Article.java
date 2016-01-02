@@ -1,6 +1,5 @@
 package com.pharmacy.domain;
 
-import com.pharmacy.domain.util.Price;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.data.elasticsearch.annotations.Document;
