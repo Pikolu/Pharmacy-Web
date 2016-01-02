@@ -5,6 +5,7 @@ import com.pharmacy.service.api.ArticleService;
 import org.hibernate.service.spi.ServiceException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,13 +33,15 @@ public class SearchController extends AbstractController{
      * This method searched the articles for the result list in search field.
      *
      * @param parameter for search the articles
-     * @param page selected or current page.
+     * @param pageable selected or current page.
      * @return
      */
     @RequestMapping(value = "produkte", method = RequestMethod.GET)
     public @ResponseBody
     ModelAndView search(@RequestParam String parameter, Pageable pageable) {
         ModelAndView resultView = new ModelAndView("search");
+        Page<Article> page =  articleService.findArticlesByParameter(parameter, pageable);
+        resultView.addObject("page", page);
         resultView.addObject("parameter", parameter);
         return resultView;
     }
@@ -49,7 +52,7 @@ public class SearchController extends AbstractController{
         List<Article> articles = null;
         try {
             LOG.info("SEARCH_REQUEST: {}", parameter);
-            articles = articleService.findArticlesByParameter(parameter);
+            articles = null; //articleService.findArticlesByParameter(parameter);
         } catch (ServiceException ex) {
             ex.fillInStackTrace();
         }
