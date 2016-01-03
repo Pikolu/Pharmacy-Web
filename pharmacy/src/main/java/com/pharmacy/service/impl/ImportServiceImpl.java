@@ -2,6 +2,7 @@ package com.pharmacy.service.impl;
 
 import com.pharmacy.domain.Article;
 import com.pharmacy.domain.Pharmacy;
+import com.pharmacy.domain.Price;
 import com.pharmacy.repository.ArticleRepository;
 import com.pharmacy.repository.PharmacyRepository;
 import com.pharmacy.repository.search.ArticleSearchRepository;
@@ -92,8 +93,57 @@ public class ImportServiceImpl implements ImportService {
         article.setDeepLink(attr.get(8));
         article.setKeyWords(attr.get(9));
         Assert.notNull(pharmacy);
+
+        Price price;
+        for(int i = 1; i < 10; i++) {
+            price = new Price();
+            price.setPrice((float)i * 10);
+            price.setDiscount(i * 10);
+            article.getPrices().add(price);
+        }
+
+//        price.setPrice(convertStringToFolat(attr.get(5)));
+//        price.setSuggestedRetailPrice(convertStringToFolat(attr.get(11)));
+//        price.setExtraShippingSuffix(attr.get(13));
+//        price.setDiscount(getDiscount(price.getSuggestedRetailPrice(), price.getPrice()));
+
         return article;
     }
+
+    private int getDiscount(float suggestedRetailPrice, float price) {
+        LOG.trace("Enter getDiscount: suggestedRetailPrice={}, price={}", suggestedRetailPrice, price);
+        int result = 0;
+        if (suggestedRetailPrice != 0) {
+            result = (int) (100 - (price / suggestedRetailPrice) * 100);
+        }
+        if (result < 0) {
+            result = 0;
+        }
+        LOG.trace("Exit getDiscount: result={}", result);
+        return result;
+    }
+
+    private float convertStringToFolat(String oldValue) {
+        LOG.trace("Enter replaceCommaToPoint: oldValue={}", oldValue);
+        float result = 0;
+        String newValue = "";
+        if (StringUtils.isNotEmpty(oldValue)) {
+            if (oldValue.contains(",")) {
+                LOG.debug("change comma to point");
+                newValue = oldValue.replace(",", ".");
+            } else {
+                LOG.debug("set old {} to new value", oldValue);
+                newValue = oldValue;
+            }
+            LOG.debug("change value {} to float", newValue);
+            result = Float.valueOf(newValue);
+        } else {
+            LOG.debug("value is empty set 0");
+        }
+        LOG.trace("Exit replaceCommaToPoint: newValue={}", newValue);
+        return result;
+    }
+
 
     /**
      * CSV content parser. Convert an InputStream with the CSV contents to a

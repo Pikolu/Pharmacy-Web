@@ -1,6 +1,5 @@
 package com.pharmacy.domain;
 
-import com.pharmacy.domain.util.Price;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.data.elasticsearch.annotations.Document;
@@ -9,6 +8,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -45,6 +45,8 @@ public class Article implements Serializable {
     @Column(name = "key_words")
     private String keyWords;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "article_id")
     private List<Price> prices;
 
     public Long getId() {
@@ -104,6 +106,9 @@ public class Article implements Serializable {
     }
 
     public List<Price> getPrices() {
+        if (prices == null) {
+            prices = new ArrayList<>();
+        }
         return prices;
     }
 
