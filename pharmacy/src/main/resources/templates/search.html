@@ -8,13 +8,37 @@
 <body>
     <div th:fragment="content">
         <div th:class="main-container">
-            <h1>Suche <span th:text="${parameter}">Parameter</span></h1>
+            <h1>Suchergebnisse zu
+                <span th:text="${parameter}">Parameter</span>
+            </h1>
 
-                <nav>
-                    <ul class="pagination">
-                        <li>last</li>
-                    </ul>
-                </nav>
+
+
+
+            <table border="0" cellpadding="5" cellspacing="5" style="margin: auto;">
+                <tr>
+                    <td>
+                        <a th:href="@{/produkte(parameter=${parameter},page=${page.getNumber() -1})}" th:if="${!page.isFirst()}" style="float: right;">Zurück</a>
+                    </td>
+                    <td th:each="i : ${#numbers.sequence(0, page.getTotalPages())}" th:if="${page.getTotalPages() le 6 and page.getNumber() le 6}">
+                        <a th:href="@{/produkte(parameter=${parameter},page=${i})}" th:text="${i +1}" th:if="${i != page.getNumber()}"></a>
+                        <span th:text="${i+1}" th:if="${i == page.getNumber()}"></span>
+                    </td>
+
+                    <td th:each="i : ${#numbers.sequence(0, 9)}" th:if="${page.getTotalPages() gt 6 and page.getNumber() lt 6}" >
+                        <a th:href="@{/produkte(parameter=${parameter},page=${i})}" th:text="${i + 1}" th:if="${i != page.getNumber()}"></a>
+                        <span th:text="${i +1}" th:if="${i == page.getNumber()}"></span>
+                    </td>
+                    <td th:each="i : ${#numbers.sequence(page.getNumber()-5, page.getNumber() +4)}" th:if="${page.getTotalPages() ge 6 and page.getNumber() ge 6}" >
+                        <a th:href="@{/produkte(parameter=${parameter},page=${i})}" th:text="${i+1}" th:if="${i != page.getNumber() and i lt page.getTotalPages()}"></a>
+                        <span th:text="${i +1}" th:if="${i == page.getNumber()}"></span>
+                    </td>
+
+                    <td>
+                        <a th:href="@{/produkte(parameter=${parameter},page=${page.getNumber() +1})}" th:if="${!page.isLast()}" style="float: right;">Weiter</a>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 </body>
