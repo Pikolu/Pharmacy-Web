@@ -11,6 +11,5 @@ import java.util.List;
  */
 public interface ArticleSearchRepository extends ElasticsearchRepository<Article, Long> {
 
-    @Query("{'bool' : {'must' : {'field' : {'name' : {'query' : '?*','analyze_wildcard' : true}}}}}")
-    List<Article> findArticlesByParameter(String name);
+
 }

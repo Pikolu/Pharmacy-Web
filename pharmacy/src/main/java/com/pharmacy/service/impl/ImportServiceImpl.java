@@ -6,6 +6,7 @@ import com.pharmacy.domain.Price;
 import com.pharmacy.repository.ArticleRepository;
 import com.pharmacy.repository.PharmacyRepository;
 import com.pharmacy.repository.search.ArticleSearchRepository;
+import com.pharmacy.repository.search.PriceSearchRepository;
 import com.pharmacy.service.api.ImportService;
 import org.apache.commons.lang.StringUtils;
 import org.hibernate.service.spi.ServiceException;
@@ -35,6 +36,8 @@ public class ImportServiceImpl implements ImportService {
     private ArticleRepository articleRepository;
     @Inject
     private ArticleSearchRepository articleSearchRepository;
+    @Inject
+    private PriceSearchRepository priceSearchRepository;
 
     /**
      * This method imports the articles from CSV file and save this into database.
@@ -43,7 +46,7 @@ public class ImportServiceImpl implements ImportService {
     @Override
     public void importCSVFile() {
         InputStream inputStream = null;
-        Long PHARMACY_ID = 1004L;
+        Long PHARMACY_ID = 1003L;
         Pharmacy pharmacy = pharmacyRepository.findOne(PHARMACY_ID);
         try {
             inputStream = new FileInputStream("C:\\Users\\Alexander\\Dropbox\\Mappe1.csv");
@@ -100,6 +103,8 @@ public class ImportServiceImpl implements ImportService {
             price.setPrice((float)i * 10);
             price.setDiscount(i * 10);
             article.getPrices().add(price);
+            price.setArticle(article);
+            priceSearchRepository.save(price);
         }
 
 //        price.setPrice(convertStringToFolat(attr.get(5)));

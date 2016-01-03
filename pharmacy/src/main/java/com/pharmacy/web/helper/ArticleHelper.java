@@ -18,7 +18,7 @@ public class ArticleHelper {
 
                 @Override
                 public int compare(Price o1, Price o2) {
-                    return (o1.getDiscount() > o2.getDiscount() ? -1 : (o1.getDiscount() == o2.getDiscount() ? 0 : 1));
+                    return (o1.getDiscount() < o2.getDiscount() ? -1 : (o1.getDiscount() == o2.getDiscount() ? 0 : 1));
                 }
             });
             result = prices.get(0);
