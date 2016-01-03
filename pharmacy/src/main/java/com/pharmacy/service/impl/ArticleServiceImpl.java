@@ -5,6 +5,7 @@ import com.pharmacy.domain.Price;
 import com.pharmacy.repository.search.ArticleSearchRepository;
 import com.pharmacy.repository.search.PriceSearchRepository;
 import com.pharmacy.service.api.ArticleService;
+import org.apache.commons.lang.StringUtils;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.index.query.FilterBuilder;
 import org.elasticsearch.index.query.FilterBuilders;
@@ -30,6 +31,10 @@ import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.action.search.SearchType;
 import org.elasticsearch.index.query.FilterBuilders.*;
 import org.elasticsearch.index.query.QueryBuilders.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.elasticsearch.node.NodeBuilder.*;
 
 /**
@@ -50,7 +55,7 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public Page<Article> findArticlesByParameter(String parameter, Pageable pageable) {
+    public FacetedPage<Article> findArticlesByParameter(String parameter, Pageable pageable) {
 
         RangeFacetBuilder test = FacetBuilders.rangeFacet("f")
                 .field("prices.price")         // Field to compute on
@@ -60,13 +65,17 @@ public class ArticleServiceImpl implements ArticleService {
 
         FacetRequest facetRequest = new NativeFacetRequest(test);
 
-
-        QueryBuilder queryBuilder = QueryBuilders.matchAllQuery();
+        QueryBuilder queryBuilder;
+        if (StringUtils.isBlank(parameter)) {
+            queryBuilder = QueryBuilders.matchAllQuery();
+        } else {
+            queryBuilder = QueryBuilders.matchQuery("name", parameter);
+        }
 
         SearchQuery searchQuery = new NativeSearchQueryBuilder().withQuery(queryBuilder).withFacet(facetRequest).withPageable(pageable).build();
 
-        FacetedPage<Article> test2 = articleSearchRepository.search(searchQuery);
+        FacetedPage<Article> articles = articleSearchRepository.search(searchQuery);
 
-        return articleSearchRepository.findAll(pageable);
+        return articles;
     }
 }

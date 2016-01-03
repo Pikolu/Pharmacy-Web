@@ -3,6 +3,7 @@ package com.pharmacy.service.api;
 import com.pharmacy.domain.Article;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.elasticsearch.core.FacetedPage;
 
 import java.util.List;
 
@@ -13,5 +14,5 @@ public interface ArticleService {
 
     Page<Article> findArticlesByBestPrice(Pageable pageable);
 
-    Page<Article> findArticlesByParameter(String parameter, Pageable pageable);
+    FacetedPage<Article> findArticlesByParameter(String parameter, Pageable pageable);
 }
