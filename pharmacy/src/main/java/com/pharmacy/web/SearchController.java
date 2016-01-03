@@ -2,6 +2,8 @@ package com.pharmacy.web;
 
 import com.pharmacy.domain.Article;
 import com.pharmacy.service.api.ArticleService;
+import com.pharmacy.web.helper.ArticleHelper;
+import com.pharmacy.web.helper.URLHelper;
 import org.hibernate.service.spi.ServiceException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,6 +46,8 @@ public class SearchController extends AbstractController{
         FacetedPage<Article> page =  articleService.findArticlesByParameter(parameter, pageable);
         resultView.addObject("page", page);
         resultView.addObject("parameter", parameter);
+        resultView.addObject("urlEncoder", new URLHelper());
+        resultView.addObject("articleHelper", new ArticleHelper());
         return resultView;
     }
 
