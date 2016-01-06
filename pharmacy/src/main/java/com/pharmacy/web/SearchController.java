@@ -39,7 +39,7 @@ public class SearchController extends AbstractController{
      * @param pageable selected or current page.
      * @return
      */
-    @RequestMapping(value = "produkte", method = RequestMethod.GET)
+    @RequestMapping(value = "suche", method = RequestMethod.GET)
     public @ResponseBody
     ModelAndView search(@RequestParam String parameter, Pageable pageable) {
         ModelAndView resultView = new ModelAndView("search");
@@ -51,7 +51,7 @@ public class SearchController extends AbstractController{
         return resultView;
     }
 
-    @RequestMapping(value = "/suche", method = RequestMethod.GET)
+    @RequestMapping(value = "/live_suche", method = RequestMethod.GET)
     public @ResponseBody
     List<Article> search(HttpServletRequest request, @RequestParam String parameter) {
         List<Article> articles = null;

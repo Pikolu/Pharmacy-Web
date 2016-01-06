@@ -33,7 +33,7 @@
                             <img th:class="logo" th:src="@{/images/logo1.png}" />
                         </a>
                     </div>
-                    <form th:id="searchForm" action="#" th:action="@{/produkte}" th:method="GET">
+                    <form th:id="searchForm" action="#" th:action="@{/suche}" th:method="GET">
                         <div th:id="search">
                             <div th:class="button-search"></div>
                         <span th:class="search-bg">
@@ -42,7 +42,7 @@
                         </div>
                         <script th:inline="javascript">
                             /*<![CDATA[*/
-                            var context = [[@{/suche}]];
+                            var context = [[@{/live_suche}]];
                             console.log(context);
                             /*]]>*/
                             jQuery(document).ready(function () {

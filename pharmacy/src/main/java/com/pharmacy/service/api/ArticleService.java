@@ -17,5 +17,5 @@ public interface ArticleService {
 
     FacetedPage<Article> findArticlesByParameter(String parameter, Pageable pageable);
 
-    Article findArticleByArticleNumber(String articelNumber) throws ServiceException;
+    Article findArticleByArticleNumber(Long id) throws ServiceException;
 }

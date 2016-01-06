@@ -9,6 +9,8 @@ import com.pharmacy.repository.search.ArticleSearchRepository;
 import com.pharmacy.repository.search.PriceSearchRepository;
 import com.pharmacy.service.api.ImportService;
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.math.DoubleRange;
+import org.apache.commons.math3.util.Precision;
 import org.hibernate.service.spi.ServiceException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,6 +22,7 @@ import javax.inject.Inject;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by Alexander on 14.11.2015.
@@ -98,20 +101,21 @@ public class ImportServiceImpl implements ImportService {
         Assert.notNull(pharmacy);
 
         Price price;
+
+        double rangeMin = 0.99;
+        double rangeMax = 99.99;
+
         for(int i = 1; i < 10; i++) {
+            Random r = new Random();
+            double randomValue = rangeMin + (rangeMax - rangeMin) * r.nextDouble();
+            randomValue = Precision.round(randomValue, 2);
             price = new Price();
-            price.setPrice((float)i * 10);
+            price.setPrice(randomValue);
             price.setDiscount(i * 10);
             article.getPrices().add(price);
             price.setArticle(article);
-            priceSearchRepository.save(price);
+            price.setPharmacy(pharmacy);
         }
-
-//        price.setPrice(convertStringToFolat(attr.get(5)));
-//        price.setSuggestedRetailPrice(convertStringToFolat(attr.get(11)));
-//        price.setExtraShippingSuffix(attr.get(13));
-//        price.setDiscount(getDiscount(price.getSuggestedRetailPrice(), price.getPrice()));
-
         return article;
     }
 

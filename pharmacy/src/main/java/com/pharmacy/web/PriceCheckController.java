@@ -3,6 +3,7 @@ package com.pharmacy.web;
 import com.pharmacy.domain.Article;
 import com.pharmacy.exceptions.ServiceException;
 import com.pharmacy.service.api.ArticleService;
+import com.pharmacy.web.helper.ArticleHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,8 +27,10 @@ public class PriceCheckController extends AbstractController {
     public ModelAndView loadAllPharmacyForPriceCheck(@PathVariable String articelNumber, @PathVariable String name, HttpServletRequest request, HttpSession session) {
         ModelAndView modelAndView = new ModelAndView("priceCheck");
         try {
-            Article article = articleService.findArticleByArticleNumber(articelNumber);
+            Article article = articleService.findArticleByArticleNumber(Long.valueOf(articelNumber));
+            ArticleHelper.sortPrice(article.getPrices());
             modelAndView.addObject("article", article);
+            modelAndView.addObject("articleHelper", new ArticleHelper());
         } catch (ServiceException | NumberFormatException e) {
         }
         return modelAndView;

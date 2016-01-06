@@ -11,6 +11,7 @@ import org.elasticsearch.client.Client;
 import org.elasticsearch.index.query.FilterBuilder;
 import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.index.query.WildcardQueryBuilder;
 import org.elasticsearch.search.facet.FacetBuilders;
 import org.elasticsearch.search.facet.range.RangeFacetBuilder;
 import org.elasticsearch.search.sort.FieldSortBuilder;
@@ -26,6 +27,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 import javax.inject.Inject;
+import java.util.List;
+import static org.elasticsearch.index.query.QueryBuilders.*;
 
 
 /**
@@ -50,11 +53,13 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public FacetedPage<Article> findArticlesByParameter(String parameter, Pageable pageable) {
 
+
         RangeFacetBuilder test = FacetBuilders.rangeFacet("f")
                 .field("prices.price")         // Field to compute on
                 .addUnboundedFrom(10)    // from -infinity to 3 (excluded)
-                .addRange(11, 20)         // from 3 to 6 (excluded)
+                .addRange(10, 20)         // from 3 to 6 (excluded)
                 .addUnboundedTo(20);     // from 6 to +infinity
+
 
         FacetRequest facetRequest = new NativeFacetRequest(test);
 
@@ -62,7 +67,7 @@ public class ArticleServiceImpl implements ArticleService {
         if (StringUtils.isBlank(parameter)) {
             queryBuilder = QueryBuilders.matchAllQuery();
         } else {
-            queryBuilder = QueryBuilders.matchQuery("name", parameter);
+            queryBuilder = QueryBuilders.wildcardQuery("name", "*" + parameter.toLowerCase() + "*");//QueryBuilders.matchQuery("name", parameter);
         }
 
         SortBuilder sortBuilder = new FieldSortBuilder("prices.price");
@@ -75,8 +80,8 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public Article findArticleByArticleNumber(String articelNumber) {
-        Assert.hasText(articelNumber);
-        return articleRepository.findArticleByArticleNumber(Integer.valueOf(articelNumber));
+    public Article findArticleByArticleNumber(Long id) {
+        Assert.notNull(id);
+        return articleRepository.findOne(id);
     }
 }
