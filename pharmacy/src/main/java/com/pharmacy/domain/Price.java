@@ -1,5 +1,6 @@
 package com.pharmacy.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.*;
 
 import javax.persistence.*;
@@ -34,12 +35,13 @@ public class Price implements Serializable {
     private Integer discount;
 
     @Column(name = "price")
-    private Float price;
+    private Double price;
 
     @OneToOne
     private Pharmacy pharmacy;
 
     @ManyToOne
+    @JsonIgnore
     private Article article;
 
     public Long getId() {
@@ -74,11 +76,11 @@ public class Price implements Serializable {
         this.discount = discount;
     }
 
-    public Float getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(Float price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 

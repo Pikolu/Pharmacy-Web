@@ -1,6 +1,7 @@
 package com.pharmacy.repository.search;
 
 import com.pharmacy.domain.Article;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.annotations.Query;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
@@ -11,6 +12,8 @@ import java.util.List;
  */
 public interface ArticleSearchRepository extends ElasticsearchRepository<Article, Long> {
 
-    @Query("{'bool' : {'must' : {'field' : {'name' : {'query' : '?*','analyze_wildcard' : true}}}}}")
-    List<Article> findArticlesByParameter(String name);
+    @Query("{\"bool\" : {\"must\" : {\"field\" : {\"name\" :\n" +
+            "{\"query\" :\n" +
+            "\"?*\",\"analyze_wildcard\" : true}}}}}\n")
+    List<Article> findArticles(String name);
 }

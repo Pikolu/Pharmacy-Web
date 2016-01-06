@@ -10,5 +10,5 @@ import org.springframework.data.repository.query.Param;
 public interface ArticleRepository extends JpaRepository<Article, Long> {
 
     @Query("SELECT DISTINCT a FROM Article a WHERE a.articelNumber = :articelNumber")
-    Article findArticleByArticleNumber(Integer articleNumber);
+    Article findArticleByArticleNumber(@Param(value = "articelNumber") Integer articleNumber);
 }
