@@ -12,6 +12,11 @@
         <!--</h1>-->
         <div id="notification"> </div>
         <div id="content">
+
+            <!--<div style="width: 250px">-->
+                <!--Test-->
+            <!--</div>-->
+
             <div class="box">
                 <div class="box-heading">Suchergebnisse zu <span th:text="${parameter}"></span></div>
                 <div class="box-content">
@@ -44,21 +49,22 @@
                                             <td style="vertical-align: baseline;">
                                                 <div style="margin-left: 25px; float: left;">
                                                     <h4 style="margin: 0px;">
-                                                        <!--<c:url var="checkPrice" value="/preisvergleich/${article.articelNumber}/${urlEncoder.encodeURL(article.name)}" />-->
-                                                        <a th:href="${checkPrice}" th:text="${article.name}"></a>
+                                                        <a th:href="@{/preisvergleich/} + ${article.id} + '/' + ${urlEncoder.encodeURL(article.name)}" th:text="${article.name}">Name</a>
                                                     </h4>
                                                     <br/>
                                                 </div>
                                             </td>
-                                            <!--<c:set var="bestPrice" value="${articleHelper.getBestDiscount(article.prices)}" />-->
-                                            <td style="width: 130px; vertical-align: baseline;">
-                                                <!--<div>ab <span th:text="${bestPrice.price}"></span> €</div>-->
-                                                <!--<span th:text="" />-->
-                                                <!--<div style="color: #D14F4F"> <span th:text="${bestPrice.discount}" /> %<span> Ersparnis</span></div>-->
+                                            <td style="width: 130px; vertical-align: baseline;" th:with="bestPrice=${articleHelper.getBestDiscount(article.prices)}">
+                                                <div>ab <span th:text="${bestPrice.price}"></span> €</div>
+                                                <div style="color: #D14F4F">
+                                                    <span th:text="${bestPrice.discount}">discount</span>
+                                                    %
+                                                    <span> Ersparnis</span>
+                                                </div>
                                             </td>
                                             <td style="width: 155px; text-align: right; padding-right: 20px;">
                                                 <!--<c:url var="checkPrice" value="/preisvergleich/${article.articelNumber}/${urlEncoder.encodeURL(article.name)}" />-->
-                                                <a class="buttonlight morebutton" href="${checkPrice}">Zum Preisvergleich</a>
+                                                <a class="buttonlight morebutton" th:href="@{/preisvergleich/} + ${article.id} + '/' + ${urlEncoder.encodeURL(article.name)}">Zum Preisvergleich</a>
                                             </td>
                                         </tr>
                                     </table>
@@ -72,21 +78,21 @@
                                     <a th:href="@{/produkte(parameter=${parameter},page=${page.getNumber() -1})}" th:if="${!page.isFirst()}" style="float: right;">Zurück</a>
                                 </td>
                                 <td th:each="i : ${#numbers.sequence(0, page.getTotalPages() -1)}" th:if="${page.getTotalPages() le 6 and page.getNumber() le 6}">
-                                    <a th:href="@{/produkte(parameter=${parameter},page=${i})}" th:text="${i +1}" th:if="${i != page.getNumber() and !page.getContent().isEmpty()}"></a>
+                                    <a th:href="@{/suche(parameter=${parameter},page=${i})}" th:text="${i +1}" th:if="${i != page.getNumber() and !page.getContent().isEmpty()}"></a>
                                     <span th:text="${i+1}" th:if="${i == page.getNumber() and !page.getContent().isEmpty()}"></span>
                                 </td>
 
                                 <td th:each="i : ${#numbers.sequence(0, 9)}" th:if="${page.getTotalPages() gt 6 and page.getNumber() lt 6}" >
-                                    <a th:href="@{/produkte(parameter=${parameter},page=${i})}" th:text="${i + 1}" th:if="${i != page.getNumber()}"></a>
+                                    <a th:href="@{/suche(parameter=${parameter},page=${i})}" th:text="${i + 1}" th:if="${i != page.getNumber()}"></a>
                                     <span th:text="${i +1}" th:if="${i == page.getNumber()}"></span>
                                 </td>
                                 <td th:each="i : ${#numbers.sequence(page.getNumber()-5, page.getNumber() +4)}" th:if="${page.getTotalPages() ge 6 and page.getNumber() ge 6}" >
-                                    <a th:href="@{/produkte(parameter=${parameter},page=${i})}" th:text="${i+1}" th:if="${i != page.getNumber() and i lt page.getTotalPages()}"></a>
+                                    <a th:href="@{/suche(parameter=${parameter},page=${i})}" th:text="${i+1}" th:if="${i != page.getNumber() and i lt page.getTotalPages()}"></a>
                                     <span th:text="${i +1}" th:if="${i == page.getNumber()}"></span>
                                 </td>
 
                                 <td>
-                                    <a th:href="@{/produkte(parameter=${parameter},page=${page.getNumber() +1})}" th:if="${!page.isLast()}" style="float: right;">Weiter</a>
+                                    <a th:href="@{/suche(parameter=${parameter},page=${page.getNumber() +1})}" th:if="${!page.isLast()}" style="float: right;">Weiter</a>
                                 </td>
                             </tr>
                         </table>

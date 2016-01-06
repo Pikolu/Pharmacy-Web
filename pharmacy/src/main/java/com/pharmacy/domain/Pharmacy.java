@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldIndex;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -36,13 +39,15 @@ public class Pharmacy implements Serializable {
     @Column(name = "total_evaluation_points")
     private Integer totalEvaluationPoints;
 
-    @ManyToMany    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    @ManyToMany
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     @JoinTable(name = "pharmacy_payment",
                joinColumns = @JoinColumn(name="pharmacys_id", referencedColumnName="ID"),
                inverseJoinColumns = @JoinColumn(name="payments_id", referencedColumnName="ID"))
     private Set<Payment> payments = new HashSet<>();
 
-    @OneToOne    private User user;
+    @OneToOne
+    private User user;
 
     @OneToMany(mappedBy = "pharmacy")
     @JsonIgnore
@@ -90,6 +95,9 @@ public class Pharmacy implements Serializable {
     }
 
     public Set<Payment> getPayments() {
+        if (payments == null) {
+            payments = new HashSet<>();
+        }
         return payments;
     }
 
@@ -106,6 +114,9 @@ public class Pharmacy implements Serializable {
     }
 
     public Set<Evaluation> getEvaluations() {
+        if (evaluations == null) {
+            evaluations = new HashSet<>();
+        }
         return evaluations;
     }
 

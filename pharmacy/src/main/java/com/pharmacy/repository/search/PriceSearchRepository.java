@@ -8,4 +8,5 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchRepository
  */
 public interface PriceSearchRepository extends ElasticsearchRepository<Price, Long> {
 
+
 }

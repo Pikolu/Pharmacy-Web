@@ -10,7 +10,7 @@
             <column name="discount" type="integer"/>
             <column name="price" type="${floatType}"/>
             <column name="pharmacy_id" type="bigint">
-                <constraints unique="true"/>
+                <constraints unique="false"/>
             </column>
             <column name="article_id" type="bigint"/>
         </createTable>

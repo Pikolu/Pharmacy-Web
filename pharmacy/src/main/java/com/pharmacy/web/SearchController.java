@@ -2,6 +2,8 @@ package com.pharmacy.web;
 
 import com.pharmacy.domain.Article;
 import com.pharmacy.service.api.ArticleService;
+import com.pharmacy.web.helper.ArticleHelper;
+import com.pharmacy.web.helper.URLHelper;
 import org.hibernate.service.spi.ServiceException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,17 +39,19 @@ public class SearchController extends AbstractController{
      * @param pageable selected or current page.
      * @return
      */
-    @RequestMapping(value = "produkte", method = RequestMethod.GET)
+    @RequestMapping(value = "suche", method = RequestMethod.GET)
     public @ResponseBody
     ModelAndView search(@RequestParam String parameter, Pageable pageable) {
         ModelAndView resultView = new ModelAndView("search");
         FacetedPage<Article> page =  articleService.findArticlesByParameter(parameter, pageable);
         resultView.addObject("page", page);
         resultView.addObject("parameter", parameter);
+        resultView.addObject("urlEncoder", new URLHelper());
+        resultView.addObject("articleHelper", new ArticleHelper());
         return resultView;
     }
 
-    @RequestMapping(value = "/suche", method = RequestMethod.GET)
+    @RequestMapping(value = "/live_suche", method = RequestMethod.GET)
     public @ResponseBody
     List<Article> search(HttpServletRequest request, @RequestParam String parameter) {
         List<Article> articles = null;
