@@ -43,7 +43,7 @@ public class UserDetailsService implements org.springframework.security.core.use
                     .map(authority -> new SimpleGrantedAuthority(authority.getName()))
                     .collect(Collectors.toSet());
             return new CustomUserDetails(user.getId(), lowercaseLogin, user.getFirstName(), user.getLastName(),
-                    user.getPassword(),
+                    user.getPassword(), user.getEmail(),
                     grantedAuthorities, true, true, true, true);
         }).orElseThrow(() -> new UsernameNotFoundException("User " + lowercaseLogin + " was not found in the " +
                 "database"));

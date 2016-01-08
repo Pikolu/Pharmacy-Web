@@ -16,6 +16,7 @@ import org.elasticsearch.search.facet.FacetBuilders;
 import org.elasticsearch.search.facet.range.RangeFacetBuilder;
 import org.elasticsearch.search.sort.FieldSortBuilder;
 import org.elasticsearch.search.sort.SortBuilder;
+import org.elasticsearch.search.sort.SortOrder;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.core.FacetedPage;
@@ -65,12 +66,12 @@ public class ArticleServiceImpl implements ArticleService {
 
         QueryBuilder queryBuilder;
         if (StringUtils.isBlank(parameter)) {
-            queryBuilder = QueryBuilders.matchAllQuery();
+            queryBuilder = QueryBuilders.wildcardQuery("name", "*");
         } else {
             queryBuilder = QueryBuilders.wildcardQuery("name", "*" + parameter.toLowerCase() + "*");//QueryBuilders.matchQuery("name", parameter);
         }
 
-        SortBuilder sortBuilder = new FieldSortBuilder("prices.price");
+        SortBuilder sortBuilder = new FieldSortBuilder("prices.price").order(SortOrder.ASC);
 
         SearchQuery searchQuery = new NativeSearchQueryBuilder().withQuery(queryBuilder).withFacet(facetRequest).withPageable(pageable).withSort(sortBuilder).build();
 
