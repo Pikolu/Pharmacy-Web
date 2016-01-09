@@ -32,7 +32,7 @@ public class AccountController extends AbstractController {
     @Inject
     private UserService userService;
 
-    @RequestMapping(value = "/account", method = RequestMethod.GET)
+    @RequestMapping(value = "/benutzerkonto", method = RequestMethod.GET)
     public String initAccount(Model model) {
         String page = null;
         CustomUserDetails userDetails = getCustomUserDetails();

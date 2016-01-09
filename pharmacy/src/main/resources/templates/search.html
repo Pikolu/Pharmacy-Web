@@ -72,7 +72,7 @@
                             </tr>
                         </table>
 
-                        <table border="0" cellpadding="5" cellspacing="5" style="margin: auto;">
+                        <table border="0" cellpadding="5" cellspacing="5" style="margin: auto;" th:if="${!page.getContent().isEmpty()}">
                             <tr>
                                 <td>
                                     <a th:href="@{/produkte(parameter=${parameter},page=${page.getNumber() -1})}" th:if="${!page.isFirst()}" style="float: right;">Zurück</a>
