@@ -24,6 +24,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.data.repository.query.SecurityEvaluationContextExtension;
 import org.springframework.security.web.authentication.RememberMeServices;
 import org.springframework.security.web.csrf.CsrfFilter;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import javax.inject.Inject;
 
@@ -101,7 +102,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout()
                 .logoutUrl("/logout")
-                .logoutSuccessHandler(ajaxLogoutSuccessHandler)
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+//                .logoutSuccessHandler(ajaxLogoutSuccessHandler)
                 .deleteCookies("JSESSIONID")
                 .permitAll()
                 .and()
