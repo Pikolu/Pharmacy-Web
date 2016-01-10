@@ -45,8 +45,8 @@ public class EvaluationController extends AbstractController {
         return model;
     }
 
-    @RequestMapping(value = "/bewerten", method = RequestMethod.GET)
-    public ModelAndView displayPharmacy(@RequestParam String pharm, HttpServletRequest request, HttpSession session, Pageable pageable) {
+    @RequestMapping(value = "/apotheken", method = RequestMethod.GET)
+    public ModelAndView findPharmacy(@RequestParam String pharm, HttpServletRequest request, HttpSession session, Pageable pageable) {
         ModelAndView modelAndView = new ModelAndView("evaluations");
         Page<Pharmacy> pharmacies = null;
         try {
@@ -60,18 +60,13 @@ public class EvaluationController extends AbstractController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/bewerten/{pharmId}/{name}", method = RequestMethod.POST)
-    public ModelAndView evaluate(@ModelAttribute("evaluation") Evaluation evaluation, @PathVariable String pharmId, @PathVariable String name, BindingResult result) {
+    @RequestMapping(value = "/bewerten/{pharmId}/{name}", method = RequestMethod.GET)
+    public ModelAndView evaluate(@PathVariable String pharmId, @PathVariable String name, BindingResult result) {
         ModelAndView modelAndView = null;
         try {
-//            evaluationValidator.validate(evaluation, result);
-            if (result.hasErrors()) {
-                modelAndView = new ModelAndView("evaluate");
-                Pharmacy pharmacy = pharmacyService.getPharmacyById(pharmId);
-                modelAndView.addObject("pharmacy", pharmacy);
-            } else {
-                pharmacyService.saveEvaluation(pharmId, evaluation);
-            }
+            modelAndView = new ModelAndView("evaluate");
+            Pharmacy pharmacy = pharmacyService.getPharmacyById(pharmId);
+            modelAndView.addObject("pharmacy", pharmacy);
         } catch (ServiceException ex) {
 
         }
