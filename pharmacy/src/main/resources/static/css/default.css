@@ -2818,6 +2818,14 @@ ul {
     width: 315px;
 }
 
+#evaluationForm .q1{
+    width: 315px;
+}
+
+#evaluationForm select{
+    width: 322px;
+}
+
 #evaluationSearchForm .q1{
     width: 315px;
 }
