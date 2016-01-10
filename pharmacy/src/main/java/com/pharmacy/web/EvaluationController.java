@@ -49,12 +49,7 @@ public class EvaluationController extends AbstractController {
     @RequestMapping(value = "/apotheken", method = RequestMethod.GET)
     public ModelAndView findPharmacy(@RequestParam String pharm, HttpServletRequest request, HttpSession session, Pageable pageable) {
         ModelAndView modelAndView = new ModelAndView("evaluations");
-        Page<Pharmacy> pharmacies = null;
-        try {
-            pharmacies = pharmacyService.getPharmacyByName(pharm, pageable);
-        } catch (ServiceException ex) {
-            LOG.error("");
-        }
+        final Page<Pharmacy> pharmacies = pharmacyService.getPharmacyByName(pharm, pageable);
         modelAndView.addObject("evaluations", new Evaluation());
         modelAndView.addObject("pharm", pharm);
         modelAndView.addObject("pharmacies", pharmacies);
@@ -64,26 +59,20 @@ public class EvaluationController extends AbstractController {
     @RequestMapping(value = "/bewerten/{pharmId}/{name}", method = RequestMethod.GET)
     public ModelAndView evaluate(@PathVariable String pharmId, @PathVariable String name) {
         ModelAndView modelAndView = null;
-        try {
-            modelAndView = new ModelAndView("evaluate", "evaluation",new Evaluation());
-            Pharmacy pharmacy = pharmacyService.getPharmacyById(pharmId);
-            modelAndView.addObject("pharmacy", pharmacy);
-        } catch (ServiceException ex) {
-
-        }
+        modelAndView = new ModelAndView("evaluate", "evaluation", new Evaluation());
+        Pharmacy pharmacy = pharmacyService.getPharmacyById(pharmId);
+        modelAndView.addObject("pharmacy", pharmacy);
         return modelAndView;
     }
 
     @RequestMapping(value = "/bewerten/{pharmId}/{name}", method = RequestMethod.POST)
     public ModelAndView evaluate(@ModelAttribute("evaluation") Evaluation evaluation, BindingResult result, @PathVariable String pharmId, @PathVariable String name) {
         ModelAndView modelAndView = null;
-        try {
-            modelAndView = new ModelAndView("evaluate", "evaluation",new Evaluation());
-            Pharmacy pharmacy = pharmacyService.getPharmacyById(pharmId);
-            modelAndView.addObject("pharmacy", pharmacy);
-        } catch (ServiceException ex) {
-
-        }
+        modelAndView = new ModelAndView("evaluate", "evaluation", new Evaluation());
+        Pharmacy pharmacy = pharmacyService.getPharmacyById(pharmId);
+        pharmacy.getEvaluations().add(evaluation);
+        modelAndView.addObject("pharmacy", pharmacy);
+        pharmacyService.save(pharmacy);
         return modelAndView;
     }
 }

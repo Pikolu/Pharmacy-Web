@@ -15,13 +15,15 @@ import java.util.stream.Stream;
  */
 public interface PharmacyService {
 
-    Page<Pharmacy> getPharmacyByName(String name, Pageable pageable) throws ServiceException;
+    Page<Pharmacy> getPharmacyByName(String name, Pageable pageable);
 
-    List<Pharmacy> findBestPharmacies() throws ServiceException;
+    List<Pharmacy> findBestPharmacies();
 
-    List<Pharmacy> findPharmaciesByName(String pharmacyName) throws ServiceException;
+    List<Pharmacy> findPharmaciesByName(String pharmacyName);
 
-    void saveEvaluation(String pharmId, Evaluation evaluation) throws ServiceException;
+    void saveEvaluation(String pharmId, Evaluation evaluation);
 
-    Pharmacy getPharmacyById(String pharmId) throws ServiceException;
+    Pharmacy getPharmacyById(String pharmId);
+
+    void save(Pharmacy pharmacy);
 }

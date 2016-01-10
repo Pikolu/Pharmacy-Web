@@ -52,10 +52,10 @@
                                         <tr>
                                             <td>
                                                 <span class="required">*</span>
-                                                <span>Vorname</span>
+                                                <span>BEschreibung</span>
                                             </td>
                                             <td>
-                                                <input class="q1" name="description" type="text" th:field="*{description}"/>
+                                                <textarea  class="q1" name="description" type="text" th:field="*{description}" rows="4" cols="50"/>
                                                 <span th:if="${#fields.hasErrors('description')}" class="error">Bitte geben Sie Ihren Vornamen ein.</span>
                                             </td>
                                         </tr>

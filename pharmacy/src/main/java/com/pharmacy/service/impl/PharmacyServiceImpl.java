@@ -6,6 +6,7 @@ import com.pharmacy.exceptions.PersistenceException;
 import com.pharmacy.exceptions.ServiceException;
 import com.pharmacy.repository.PharmacyRepository;
 import com.pharmacy.service.api.PharmacyService;
+import org.hibernate.Hibernate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -30,12 +31,12 @@ public class PharmacyServiceImpl implements PharmacyService {
     private PharmacyRepository pharmacyRepository;
 
     @Override
-    public Page<Pharmacy> getPharmacyByName(String name, Pageable pageable) throws ServiceException {
+    public Page<Pharmacy> getPharmacyByName(String name, Pageable pageable) {
         return pharmacyRepository.findPharmacyByName(name, pageable);
     }
 
     @Override
-    public List<Pharmacy> findBestPharmacies() throws ServiceException {
+    public List<Pharmacy> findBestPharmacies() {
         List<Pharmacy> pharmacies = null;
 //        try {
 //            pharmacies = pharmacyRepository.findBestPharmacies();
@@ -47,7 +48,7 @@ public class PharmacyServiceImpl implements PharmacyService {
     }
 
     @Override
-    public List<Pharmacy> findPharmaciesByName(String pharmacyName) throws ServiceException {
+    public List<Pharmacy> findPharmaciesByName(String pharmacyName) {
         List<Pharmacy> pharmacies = null;
 //        try {
 //            pharmacies = pharmacyRepository.findPharmaciesByName(pharmacyName);
@@ -59,7 +60,7 @@ public class PharmacyServiceImpl implements PharmacyService {
     }
 
     @Override
-    public void saveEvaluation(String pharmId, Evaluation evaluation) throws ServiceException {
+    public void saveEvaluation(String pharmId, Evaluation evaluation) {
 //        try {
 //            calculateTotalEvaluation(evaluation);
 ////            pharmacyRepository.saveEvaluation(pharmId, evaluation);
@@ -70,9 +71,11 @@ public class PharmacyServiceImpl implements PharmacyService {
     }
 
     @Override
-    public Pharmacy getPharmacyById(String pharmId) throws ServiceException {
+    public Pharmacy getPharmacyById(String pharmId) {
         Assert.notNull(pharmId);
-        return pharmacyRepository.getOne(Long.valueOf(pharmId));
+        Pharmacy pharmacy = pharmacyRepository.findOne(Long.valueOf(pharmId));
+//        Hibernate.initialize(pharmacy.getEvaluations());
+        return pharmacy;
     }
 
 
@@ -80,4 +83,8 @@ public class PharmacyServiceImpl implements PharmacyService {
         evaluation.setPoints((float)(evaluation.getDescriptionPoints() + evaluation.getShippingPoints() + evaluation.getShippingPricePoints()) / 3);
     }
 
+    @Override
+    public void save(Pharmacy pharmacy) {
+        pharmacyRepository.save(pharmacy);
+    }
 }
