@@ -2,6 +2,7 @@ package com.pharmacy.web;
 
 import com.pharmacy.domain.Evaluation;
 import com.pharmacy.domain.Pharmacy;
+import com.pharmacy.domain.User;
 import com.pharmacy.exceptions.ServiceException;
 import com.pharmacy.service.api.PharmacyService;
 import org.slf4j.Logger;
@@ -61,16 +62,28 @@ public class EvaluationController extends AbstractController {
     }
 
     @RequestMapping(value = "/bewerten/{pharmId}/{name}", method = RequestMethod.GET)
-    public ModelAndView evaluate(@PathVariable String pharmId, @PathVariable String name, BindingResult result) {
+    public ModelAndView evaluate(@PathVariable String pharmId, @PathVariable String name) {
         ModelAndView modelAndView = null;
         try {
-            modelAndView = new ModelAndView("evaluate");
+            modelAndView = new ModelAndView("evaluate", "evaluation",new Evaluation());
             Pharmacy pharmacy = pharmacyService.getPharmacyById(pharmId);
             modelAndView.addObject("pharmacy", pharmacy);
         } catch (ServiceException ex) {
 
         }
         return modelAndView;
+    }
 
+    @RequestMapping(value = "/bewerten/{pharmId}/{name}", method = RequestMethod.POST)
+    public ModelAndView evaluate(@ModelAttribute("evaluation") Evaluation evaluation, BindingResult result, @PathVariable String pharmId, @PathVariable String name) {
+        ModelAndView modelAndView = null;
+        try {
+            modelAndView = new ModelAndView("evaluate", "evaluation",new Evaluation());
+            Pharmacy pharmacy = pharmacyService.getPharmacyById(pharmId);
+            modelAndView.addObject("pharmacy", pharmacy);
+        } catch (ServiceException ex) {
+
+        }
+        return modelAndView;
     }
 }

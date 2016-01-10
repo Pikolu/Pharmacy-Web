@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
 
 import javax.inject.Inject;
 import java.util.List;
@@ -70,14 +71,8 @@ public class PharmacyServiceImpl implements PharmacyService {
 
     @Override
     public Pharmacy getPharmacyById(String pharmId) throws ServiceException {
-        Pharmacy pharmacy = null;
-//        try {
-////            pharmacy = pharmacyRepository.findOne(pharmId);
-//        } catch (PersistenceException ex) {
-//            ex.writeLog(LOG);
-//            throw ex;
-//        }
-        return pharmacy;
+        Assert.notNull(pharmId);
+        return pharmacyRepository.getOne(Long.valueOf(pharmId));
     }
 
 
