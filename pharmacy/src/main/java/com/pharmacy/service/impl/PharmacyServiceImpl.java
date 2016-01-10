@@ -8,11 +8,14 @@ import com.pharmacy.repository.PharmacyRepository;
 import com.pharmacy.service.api.PharmacyService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 /**
  * Created by Alexander on 09.01.2016.
@@ -26,8 +29,8 @@ public class PharmacyServiceImpl implements PharmacyService {
     private PharmacyRepository pharmacyRepository;
 
     @Override
-    public Optional<Pharmacy> getPharmacyByName(String name) throws ServiceException {
-        return pharmacyRepository.findPharmacyByName(name);
+    public Page<Pharmacy> getPharmacyByName(String name, Pageable pageable) throws ServiceException {
+        return pharmacyRepository.findPharmacyByName(name, pageable);
     }
 
     @Override

@@ -7,6 +7,8 @@ import com.pharmacy.service.api.PharmacyService;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 /**
  * Created by Alexander on 09.01.2016.
@@ -56,16 +59,16 @@ public class EvaluationController extends AbstractController {
     }
 
     @RequestMapping(value = "/bewerten", method = RequestMethod.GET)
-    public ModelAndView displayPharmacy(@RequestParam String pharm, HttpServletRequest request, HttpSession session) {
+    public ModelAndView displayPharmacy(@RequestParam String pharm, HttpServletRequest request, HttpSession session, Pageable pageable) {
         ModelAndView modelAndView = new ModelAndView("evaluations");
-        Optional<Pharmacy> pharmacy = null;
+        Page<Pharmacy> pharmacy = null;
         try {
-            pharmacy = pharmacyService.getPharmacyByName(pharm);
-
+            pharmacy = pharmacyService.getPharmacyByName(pharm, pageable);
         } catch (ServiceException ex) {
             LOG.error("");
         }
         modelAndView.addObject("evaluations", new Evaluation());
+        modelAndView.addObject("pharm", pharm);
         modelAndView.addObject("pharmacy", pharmacy);
         return modelAndView;
     }
