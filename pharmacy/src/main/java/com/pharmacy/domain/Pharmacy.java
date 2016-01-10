@@ -39,7 +39,7 @@ public class Pharmacy implements Serializable {
     @Column(name = "total_evaluation_points")
     private Integer totalEvaluationPoints;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     @JoinTable(name = "pharmacy_payment",
                joinColumns = @JoinColumn(name="pharmacys_id", referencedColumnName="ID"),
@@ -49,7 +49,7 @@ public class Pharmacy implements Serializable {
     @OneToOne
     private User user;
 
-    @OneToMany(mappedBy = "pharmacy")
+    @OneToMany(mappedBy = "pharmacy", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Evaluation> evaluations = new HashSet<>();
