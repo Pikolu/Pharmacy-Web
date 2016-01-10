@@ -15,6 +15,9 @@
                             ,
                             <span style="color: white" th:text="${customUser.lastName}">fistName</span>
                         </a>
+                        | <a th:href="@{/logout}">
+                        Ausloggen
+                    </a>
                     </div>
                     <div th:id="welcome" th:if="${#httpServletRequest.userPrincipal == null}">
                         <span>Hallo!</span>
