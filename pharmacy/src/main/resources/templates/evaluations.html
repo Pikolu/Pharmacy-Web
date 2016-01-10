@@ -57,6 +57,23 @@
                                     </table>
                                 </form>
                             </div>
+
+                            <table class="form">
+                                <tbody>
+                                    <tr style="height: 35px; border-bottom: 1px solid #E5E5E5;" th:each="pharmacy : ${pharmacies.getContent()}" th:if="${!pharmacies.getContent().isEmpty()}">
+                                        <td>
+                                            <img width="85" height="35" th:src="${pharmacy.logoURL}" th:alt="${pharmacy.name}"/>
+                                        </td>
+                                        <td>
+                                            <span th:text="${pharmacy.name}"/>
+                                        </td>
+                                        <td style="text-align: right">
+                                            <a class="buttonlight morebutton" th:href="@{/bewerten/} + ${pharmacy.id} + '/' + ${pharmacy.name}">Diese Apotheken bewerten</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
                         </div>
                     </div>
                 </div>
